@@ -30,18 +30,21 @@ const SentimentClassifier = (doc) => {
     const score = []
     
     // Calcula o sentimento de todas as mensagens do usuário
-    doc.Interactions.map((interaction) =>  {
+    doc.Interactions.forEach((interaction) =>  {
         if(interaction.Sender === "Customer"){
             const analyzed = sentiment.analyze(`${interaction.Subject} ${interaction.Message}`, {language: 'ptbr'})
             result.push(analyzed)
             score.push(analyzed.score)
         }
+
+        // Aproveita o loop para fazer o parse das datas para o formato correto
+        interaction.DateCreate = new Date(interaction.DateCreate)
     })
 
     // Calcula o ânimo global do cliente. As mensagens mais antigas tem peso menor na classificação
     const averageScore = -(Math.round(score.reduce((first, second) => (first + (second * 2))/3 )) + 0.5)
 
-    return {result, averageScore}
+    return {doc, result, averageScore}
 }
 
 

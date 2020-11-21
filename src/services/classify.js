@@ -11,14 +11,16 @@ const classify = (docs) => {
 
         const dateClassification = DateClassifier(doc)
 
-        const {result, averageScore} = SentimentClassifier(doc, sentiment)
+        const {result, averageScore, doc:newDoc} = SentimentClassifier(doc, sentiment)
 
         const Priority = Priorize(result.length, averageScore)
 
         const Score = Classify(averageScore, dateClassification)
         
         return {
-            ...doc,
+            ...newDoc,
+            DateCreate: new Date(doc.DateCreate),
+            DateUpdate: new Date(doc.DateUpdate),
             Priority,
             Score
         }

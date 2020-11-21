@@ -1,24 +1,16 @@
 // TODO: passar o classify pro middleware
 const Ticket = require('../models/ticket')
-const capitalize = require('capitalize')
 
-// Retorna todos os dados
+// Retorna todos os dados considerando os filtros, ordenações e paginação
 const get = async (params) => {
-
+    console.log(params.options)
     try {
-        return await Ticket.find({}, null, {
-            limit: parseInt(params.limit),
-            skip: parseInt(params.skip) * parseInt(params.limit),
-            sort: {
-                Score: -1
-            }
-        })
+        return await Ticket.find(params.filters, null, params.options)
     } catch (error) {
         throw new Error(error)
     }
     
 }
-
 
 // Conta a quantidade de documentos inseridos
 const count = async () => {

@@ -1,7 +1,7 @@
 // TODO: javadocs
 const express = require('express')
 
-const populate = require('../middleware/populate')
+const { populate, getParams } = require('../middleware/')
 const ticketController = require('../controllers/ticketController')
 
 const router = new express.Router()
@@ -12,8 +12,8 @@ router.post('/tickets', populate, async (req, res) => {
 })
 
 // Endpoint para pegar todos os tickets inseridos
-router.get('/tickets', populate, async (req, res) => {
-    res.send( await ticketController.get(req.query) )
+router.get('/tickets', populate, getParams, async (req, res) => {
+    res.send( await ticketController.get(req.params) )
 })
 
 module.exports = router
