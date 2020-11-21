@@ -42,16 +42,11 @@ const ticketSchema = new mongoose.Schema({
     }
 })
 
-// TODO: criar módulo
-// Classificação dos tickets
-ticketSchema.statics.classify = (ticketsData) => {
-
-    
-}
-
+// Faz um operação bulk para inserir todos os dados de uma vez na base de dados
 ticketSchema.statics.insertData = async (ticketsData) => {
 
-    const response = await Ticket.collection.insertMany(ticketsData)
+    // Fazer a operação sem ordenação aumenta a performance do bulk insert
+    const response = await Ticket.collection.insertMany(ticketsData, {ordered: false})
 
     if(ticketsData.length !== response.insertedCount)
         throw new Error(`Erro: Foram inseridos ${ticketsData.length} de ${response.insertedCount} documentos`)
@@ -59,7 +54,7 @@ ticketSchema.statics.insertData = async (ticketsData) => {
     return response.insertedCount
 }
 
-// Modelo
+// Inicializando o modelo
 const Ticket = mongoose.model('Ticket', ticketSchema)
 
 
