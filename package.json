@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.js",
+    "teste": "node teste.js",
     "dev": "nodemon src/index.js"
   },
   "keywords": [],
@@ -13,7 +14,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.10.15"
+    "mongoose": "^5.10.15",
+    "sentiment": "^5.0.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"

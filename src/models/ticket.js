@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
-// Tickets model
-const Ticket = mongoose.model('Ticket', {
+// Schema do modelo
+const ticketSchema = new mongoose.Schema({
     TicketID: {
         type: Number
     },
@@ -36,15 +36,34 @@ const Ticket = mongoose.model('Ticket', {
         Sender: {
             type: String
         }
-    }]
+    }],
+    Priority: {
+        type: String
+    }
 })
 
+// TODO: criar módulo
+// Classificação dos tickets
+ticketSchema.statics.classify = (ticketsData) => {
 
-// Ticket.collection.insertMany(ticketsData).then((r) => {
-//     assert.equal(ticketsData.length, r.insertedCount);
-//     // Finish up test
-//     // db.close();
-// });
+    
+}
+
+ticketSchema.statics.insertData = async (ticketsData) => {
+
+    const response = await Ticket.collection.insertMany(ticketsData)
+
+    if(ticketsData.length !== response.insertedCount)
+        throw new Error(`Erro: Foram inseridos ${ticketsData.length} de ${response.insertedCount} documentos`)
+
+    return response.insertedCount
+}
+
+// Modelo
+const Ticket = mongoose.model('Ticket', ticketSchema)
+
+
+
 
 
 module.exports = Ticket
