@@ -10,8 +10,11 @@ const getSynonyms = async (afinn) => {
         if(word.split(' ').length === 1){
             const synonyms = await sinonimo(word)
             synonyms.forEach((synonym) => {
-                if(! (synonyms in afinn_enhanced) )
-                    afinn_enhanced[synonyms] = afinn_enhanced[word]
+                if(! (synonym in afinn_enhanced) )
+                    afinn_enhanced[synonym] = afinn_enhanced[word]
+                else if(! (synonym in afinn) && afinn_enhanced[synonym] * afinn_enhanced[word] < 0)
+                    afinn_enhanced[synonym] += afinn_enhanced[word]
+                
             })
         }
         

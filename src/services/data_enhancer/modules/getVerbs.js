@@ -6,13 +6,17 @@ const getVerbs = (afinn) => {
     Object.keys(afinn).forEach((word) => {
         try{
             const allVerbs = conjugar(word)
-            Object.keys(allVerbs).forEach((verbalTime) => {
-                allVerbs[verbalTime].forEach((verb) => {
-                    if(!(verb in afinn_enhanced)){
-                        afinn_enhanced[verb] = afinn_enhanced[word]
-                    }
-                        
-                })
+            allVerbs['p'].forEach((verb) => {
+                if(!(verb in afinn_enhanced)){
+                    afinn_enhanced[verb] = afinn_enhanced[word]
+                }
+                    
+            })
+            allVerbs['pp'].forEach((verb) => {
+                if(!(verb in afinn_enhanced)){
+                    afinn_enhanced[verb] = afinn_enhanced[word]
+                }
+                    
             })
         }catch(e){
             // return;

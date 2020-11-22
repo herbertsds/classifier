@@ -1,4 +1,7 @@
-var Sentiment = require('sentiment');
+const Sentiment = require('sentiment')
+const { removeAcentos, removeCedilha } = require('ptbr')
+
+const { labels, changeValue } = require('../data')
 
 // Instanciando o analisador de sentimentos
 const sentiment = new Sentiment();
@@ -7,18 +10,30 @@ const sentiment = new Sentiment();
 const SetSentimentLib = () => {
 
     const ptbrLanguage = {
-        labels: require('../data/AFINN/enhanced.json'),
-        // scoringStrategy: {
-        //   apply: function(tokens, cursor, tokenScore) {
-        //     if (cursor > 0) {
-        //       var prevtoken = tokens[cursor - 1];
-        //       if (prevtoken === 'pas') {
-        //         tokenScore = -tokenScore;
-        //       }
-        //     }
-        //     return tokenScore;
-        //   }
-        // }
+        labels,
+        // Analisando palavras que invertem a polaridade de outras palavras
+        scoringStrategy: {
+            apply: function(tokens, cursor, tokenScore) {
+                if (cursor > 0) {
+                    const prevtoken = tokens[cursor - 1]
+                    
+                    let thirdToken = ''
+                    if(cursor > 1){
+                        thirdToken = tokens[cursor - 2]
+                    }
+
+                    if (changeValue[prevtoken] || changeValue[thirdToken]) {
+                        console.log(tokens[cursor])
+                        tokenScore = -tokenScore
+                    }
+
+                    // Caso especial do reclame aqui (palavra composta)
+                    if(prevtoken === 'reclame' && tokens[cursor] === 'aqui')
+                        tokenScore = -5
+                }
+                return tokenScore
+            }
+        }
     }
 
     sentiment.registerLanguage('ptbr', ptbrLanguage);
@@ -32,8 +47,9 @@ const SentimentClassifier = (doc) => {
     // Calcula o sentimento de todas as mensagens do usuário
     doc.Interactions.forEach((interaction) =>  {
         if(interaction.Sender === "Customer"){
-            const analyzed = sentiment.analyze(`${interaction.Subject} ${interaction.Message}`, {language: 'ptbr'})
+            const analyzed = sentiment.analyze(`${removeAcentos(removeCedilha(interaction.Subject)) } ${removeAcentos(removeCedilha(interaction.Message))}`, {language: 'ptbr'})
             result.push(analyzed)
+            console.log(analyzed)
             score.push(analyzed.score)
         }
 

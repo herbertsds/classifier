@@ -6,7 +6,7 @@ const plainText = require('./modules/plainText')
 const { writeJson } = require('../manipulateFile')
 
 
-const afinn = require('../classify/data/AFINN/AFINN.json')
+const afinn = require('../classify/data/AFINN/en/translated.json')
 
 // Módulo responsável por melhorar a base AFINN inicial
 const data_enhancer = async () => {
