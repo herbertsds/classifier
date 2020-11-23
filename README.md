@@ -12,14 +12,11 @@ O case parte do princípio que existe um arquivo *tickets.json* que contém uma 
     -   Primeira iteração do consumidor
     -   Consumidor não demonstra irritação
 
-A decisão de construir esta ferramenta em Node.js e MongoDB partiu da ideia de utilizar o case para aprender mais e colocar os conhecimentos a prova.
-
-O desafio de construir um projeto funcional utilizando tecnologias das quais não tive oportunidade de trabalhar antes, embora já as tenha estudado, foi a principal motivação da escolha por Node.js e MongoDB.
+A decisão de construir esta ferramenta em Node.js e MongoDB partiu da necessidade de se produzir uma solução escalável e baseada em sistemas abertos de desenvolvimento de software, com possibilidade de integrar diversos módulos de código aberto para construção de aplicações robustas.
 
 ## Índice
 
-- [Motivação](#Motivação)
-- [Instalação Manual](#Instalação&#32;Manual)
+- [Instalação](#Instalação)
     - [Node.js 12.19.0 (LTS)](#Node)
     - [npm](#npm)
     - [MongoDB](#MongoDB)
@@ -34,7 +31,7 @@ O desafio de construir um projeto funcional utilizando tecnologias das quais nã
     - [manipulateFile](#manipulateFile)
 - [Considerações Finais](#Considerações&#32;Finais)
 
-## Instalação Manual
+## Instalação
 
 [voltar ao topo](#Índice)
 
