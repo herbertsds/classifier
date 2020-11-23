@@ -6,7 +6,19 @@ labels.reclameaqui = -5
 labels.justica = -5
 labels.procon = -5
 
+// Exemplo de palavras a serem corrigidas via crowdsourcing (desabilitar aqui para utilizar crowdsourcing)
+// Há outros exemplos de palavras identificadas que não foram colocadas aqui para que seja possível testar o crowdsourcing
+labels.produto = 0
+labels.compra = 0
+labels.troquei = 0
+labels.trocamos = 0
+labels.vez = 0
+labels.verificar = 0
+labels.contato = 0
+labels.programa = 0
+
 // Palavras identificadas com conotação errada pelo contexto
+// Também são palavras a serem corrigidas via crowdsourcing (desabilitar aqui para utilizar crowdsourcing)
 labels.tentei = - labels.tentei
 labels.aguardo = - labels.aguardo
 labels.aguardando = - labels.aguardando

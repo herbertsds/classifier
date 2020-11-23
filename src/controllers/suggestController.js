@@ -2,6 +2,8 @@ const { classify, crowdsource } = require('../services/classify')
 const { writeJson } = require('../services/manipulateFile')
 const ticketController = require('./ticketController')
 
+// Salva as sugestões enviadas pelo usuário no arquivo de crowdsourcing
+// Reclassifica os tickets se receber o parâmetro 'reclassify'
 const saveSuggest = async (req) => {
     
     let classified

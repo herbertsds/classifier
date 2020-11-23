@@ -5,6 +5,8 @@ const data = require('../data/crowdsource/crowdsource.json')
 const db = require('../data/AFINN/enhanced.json')
 const { writeJsonSync } = require('../../manipulateFile')
 
+// Calcula o novo valor de classificação de cada palavra da requisição
+// O novo valor será a média entre o valor original e todas as sugestões
 const crowdsource = (req) => {
     Object.keys(req).forEach(word => {
         

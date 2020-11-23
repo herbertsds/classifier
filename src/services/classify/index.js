@@ -3,7 +3,7 @@ const {SetSentimentLib, SentimentClassifier} = require('./modules/sentimentClass
 const {Priorize, Classify} = require('./modules/synthesize')
 const crowdsource = require('./modules/crowdsource')
 
-
+// Executa todos os passos da classificação e retorna os resultados
 const classify = (docs) => {
 
     sentiment = SetSentimentLib()

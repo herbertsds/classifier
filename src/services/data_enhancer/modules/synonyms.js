@@ -1,5 +1,17 @@
+/**  
+ * 
+ * Lista os sinônimos de cada palavra da base e as acrescenta 
+ * com o mesmo valor da palavra original.
+ * 
+ * OBS: essa operação depende de conexão com a internet
+ * OBS: a biblioteca dá resultados com ordens diferentes em cada retorno
+ * 
+ * Portanto, cada execução gerará uma base de dados diferente.
+ * 
+*/
 const sinonimo = require('sinonimo')
 
+// 
 const getSynonyms = async (afinn) => {
     const afinn_enhanced = afinn
 

@@ -67,8 +67,4 @@ ticketSchema.statics.insertData = async (ticketsData) => {
 // Inicializando o modelo
 const Ticket = mongoose.model('Ticket', ticketSchema)
 
-
-
-
-
 module.exports = Ticket

@@ -38,6 +38,8 @@ const SetSentimentLib = () => {
     sentiment.registerLanguage('ptbr', ptbrLanguage);
 }
 
+// Algoritmo de classificação de documentos
+// Analisa todas as palavras de cada mensagem do Customer
 const SentimentClassifier = (doc) => {
     
     const result = []
@@ -70,9 +72,6 @@ const SentimentClassifier = (doc) => {
 
     return {doc, result, averageScore}
 }
-
-
-
 
 module.exports = {
     SetSentimentLib,

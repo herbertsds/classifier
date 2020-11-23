@@ -15,6 +15,7 @@ const readTxt = (path) => {
 
 }
 
+// Escreve em um arquivo JSON de forma assíncrona
 const writeJson = async (toSave, path) => {
   const data = JSON.stringify(toSave);
 
@@ -26,7 +27,7 @@ const writeJson = async (toSave, path) => {
   });
 }
 
-// Escreve em um arquivo JSON
+// Escreve em um arquivo JSON de forma síncrona
 const writeJsonSync = async (toSave, path) => {
   const data = JSON.stringify(toSave);
 

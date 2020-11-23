@@ -29,14 +29,14 @@ const populate = async (data) => {
 
 }
 
+// Deleta todos os dados do banco
 const deleteMany = async () => {
     await Ticket.deleteMany({})   
 }
 
+// Retorna todos os dados do banco
 const findTickets = async () => {
-    
     return await Ticket.find({})
-
 }
 
 module.exports = {

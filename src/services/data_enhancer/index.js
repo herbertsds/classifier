@@ -38,8 +38,6 @@ const data_enhancer = async () => {
 
     console.log(`Base aumentada de ${Object.keys(afinn).length} expressões para ${Object.keys(afinn_enhanced).length} expressões`)
 
-    
-
 }
 
 data_enhancer()
