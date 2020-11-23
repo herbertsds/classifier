@@ -1,12 +1,26 @@
 # Classifier
 
-Classifier é uma API construída em Node.js para classificação e visualizar tickets de usuários. Construída a partir do case da NeoAssist.
+Classifier é uma API construída em Node.js para classificar e visualizar tickets de usuários. Construída a partir do case da NeoAssist.
+
+O case parte do princípio que existe um arquivo *tickets.json* que contém uma série de "chamados" que precisam ser classificados como Prioridade Alta ou Normal de acordo com uma série de características.
+
+-  Prioridade Alta
+    -  Consumidor insatisfeito com produto ou serviço
+    -   Prazo de resolução do ticket alta
+    -   Consumidor sugere abrir reclamação como exemplo Procon ou ReclameAqui
+-   Prioridade Normal
+    -   Primeira iteração do consumidor
+    -   Consumidor não demonstra irritação
+
+A decisão de construir esta ferramenta em Node.js e MongoDB partiu da ideia de utilizar o case para aprender mais e colocar os conhecimentos a prova.
+
+O desafio de construir um projeto funcional utilizando tecnologias das quais não tive oportunidade de trabalhar antes, embora já as tenha estudado, foi a principal motivação da escolha por Node.js e MongoDB.
 
 ## Índice
 
 - [Motivação](#Motivação)
 - [Instalação Manual](#Instalação&#32;Manual)
-    - [Node.js 12.19.0 (LTS)](#Node.js)
+    - [Node.js 12.19.0 (LTS)](#Node)
     - [npm](#npm)
     - [MongoDB](#MongoDB)
     - [GIT](#GIT)
@@ -20,26 +34,18 @@ Classifier é uma API construída em Node.js para classificação e visualizar t
     - [manipulateFile](#manipulateFile)
 - [Considerações Finais](#Considerações&#32;Finais)
 
-## Motivação
-
-[voltar ao topo](#Índice)
-
-A decisão de construir esta ferramenta em Node.js e MongoDB partiu da ideia de utilizar o case para aprender mais e colocar os conhecimentos a prova.
-
-O desafio de construir um projeto funcional utilizando tecnologias das quais não tive oportunidade de trabalhar antes, embora já as tenha estudado, foi a principal motivação da escolha por Node.js e MongoDB.
-
 ## Instalação Manual
 
 [voltar ao topo](#Índice)
 
 ### **Requisitos**
 
-- [Node.js 12.19.0 (LTS)](#Node.js)
+- [Node.js 12.19.0 (LTS)](#Node)
 - [npm](#npm)
 - [MongoDB](#MongoDB)
 - [GIT](#GIT)
 
-### Node.js
+### Node
 
 [voltar ao topo](#Índice)
 
