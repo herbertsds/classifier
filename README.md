@@ -78,7 +78,7 @@ apt-get install -y nodejs
 O npm é o gerenciador de pacotes do Node.js e é instalado junto com ele. Para verificar a instalação do npm, execute o seguinte comando no terminal:
 
 ```bash
-node -v
+npm -v
 # Exemplo de retorno caso o npm esteja instalado:
 # $ 6.14.8
 ```
