@@ -146,11 +146,9 @@ npm run start
 
 [voltar ao topo](#Índice)
 
-
-| Tipo de Requisição | Endpoint | Descrição | Body |
-|-----|-----|-----|-----|-----|
-| POST | /tickets | Classifica os tickets utilizando o [serviço de classificação](#Classificador) e salva o resultado no banco e no json | **vazio:** Utiliza os tickets padrão. <br> <br> **json:** Utiliza os tickets recebidos via json. |
-
+| Tipo de Requisição        | Endpoint      | Descrição | Body |
+| ------|-----|-----|-----|
+| POST  	| /tickets 	| Classifica os tickets utilizando o [serviço de classificação](#Classificador) e salva o resultado no banco e no json 	| **vazio:** Utiliza os tickets padrão. <br> <br> **json:** Utiliza os tickets recebidos via json. |
 
 **Parâmetros**
 
@@ -158,15 +156,13 @@ npm run start
 - Descrição: deleta os arquivos existentes antes de adicionar os novos
 - Valores possíveis: 
     - *nenhum valor suportado*
----
----
+
 ---
 
 
-| Tipo de Requisição | Endpoint | Descrição | Body |
-|---|---|---|---|---|
-|GET|/tickets|Lista os tickets classificados. Caso não haja tickets classificados, utiliza os tickets padrão para rodar o [serviço de classificação](#Classificador) e salvar o resultado no banco e no json|*não aceita body* |
-|
+| Tipo de Requisição        | Endpoint      | Descrição | Body |
+| ------|-----|-----|-----|
+| GET  	| /tickets 	| Lista os tickets classificados. Caso não haja tickets classificados, utiliza os tickets padrão para rodar o [serviço de classificação](#Classificador) e salvar o resultado no banco e no json 	| *não aceita body* |
 
 **Parâmetros**
 
@@ -254,16 +250,15 @@ npm run start
 - Exemplo: <br>*created_from=2017-12-31&updated_to=2018-01-05* 
     - filtrar resultados criados a partir de 31/12/2017 e atualizados até 05/01/2018
 
----
----
+
 ---
 
 
 
-| Tipo de Requisição | Endpoint | Descrição | Body |
-|---|---|---|---|---|
-|POST|/suggest|Sugere novos valores de classificação das palavras. Para mais detalhes sobre sugestões, ver [serviço de crowdsourcing](#Crowdsourcing)|**json:** <br>```{ "palavra": int(valor) }``` <br> Pode ser enviado mais de uma palavra por requisição |
-|
+| Tipo de Requisição        | Endpoint      | Descrição | Body |
+| ------|-----|-----|-----|
+| POST  	| /suggest 	| Sugere novos valores de classificação das palavras. Para mais detalhes sobre sugestões, ver [serviço de crowdsourcing](#Crowdsourcing) 	| **json:** <br>```{ "palavra": int(valor) }``` <br> Pode ser enviado mais de uma palavra por requisição |
+
 
 **Parâmetros**
 
