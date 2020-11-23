@@ -1,3 +1,9 @@
+/**
+ * 
+ * Configuração de conexão com a base de dados MongoDB
+ * 
+ */
+
 const mongoose = require('mongoose')
 
 // Conectando ao banco de dados

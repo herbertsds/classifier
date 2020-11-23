@@ -1,3 +1,9 @@
+/**
+ * 
+ * Configura e inicializa a API
+ * 
+ */
+
 const express = require('express')
 
 require('./db/mongoose')

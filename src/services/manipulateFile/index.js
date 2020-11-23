@@ -1,3 +1,9 @@
+/**
+ * 
+ * Gerencia e exporta o serviço de manipulação de arquivos
+ * 
+ */
+
 const fs = require('fs');
 const readline = require('readline');
 

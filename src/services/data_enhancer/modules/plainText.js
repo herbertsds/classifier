@@ -1,6 +1,12 @@
+/**
+ * 
+ * Formata as palavras
+ * 
+ */
+
 const { removeAcentos, removeCedilha, ehPreposicao } = require('ptbr')
 
-// Retira acentuação de todas as palavras
+// Retira acentuação de todas as palavras e remove stopwords
 const plainText = (afinn) => {
     const afinn_enhanced = {}
 

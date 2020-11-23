@@ -1,3 +1,9 @@
+/**
+ * 
+ * Mapeamento das rotas da API para inserção e busca de tickets
+ * 
+ */
+
 const express = require('express')
 
 const { populate, getParams } = require('../middleware/')

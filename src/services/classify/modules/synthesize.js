@@ -1,3 +1,9 @@
+/**
+ * 
+ * Utiliza os resultados para criar a classificação discretizada e contínua
+ * 
+ */
+
 // Discretizando as prioridades
 const Priorize = (countUserMessages, averageScore) => {
 
@@ -7,7 +13,7 @@ const Priorize = (countUserMessages, averageScore) => {
     return 'Alta'
 }
 
-// Criando classificação baseada no sentimento e no tempo
+// Criando classificação baseada no sentimento e na "idade" do ticket
 const Classify = (averageScore, dateClassification) => averageScore / dateClassification
 
 module.exports = {

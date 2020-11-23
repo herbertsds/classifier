@@ -1,3 +1,9 @@
+/**
+ * 
+ * Exportando a base de dados melhorada de palavras para classificação
+ * 
+ */
+
 const labels = require('../data/AFINN/enhanced.json')
 
 // Lista de palavras negativas conhecidas

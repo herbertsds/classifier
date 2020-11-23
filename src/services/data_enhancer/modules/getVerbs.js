@@ -1,3 +1,9 @@
+/**
+ * 
+ * Retorna todos os verbos das palavras
+ * 
+ */
+
 const conjugar = require("conjugador/dist/conjugador")
 
 // Retorna as conjugações no presente e pretérito perfeito dos verbos da base 

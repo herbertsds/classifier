@@ -1,3 +1,9 @@
+/**
+ * 
+ * Model dos Tickets
+ * 
+ */
+
 const mongoose = require('mongoose')
 
 // Schema do modelo

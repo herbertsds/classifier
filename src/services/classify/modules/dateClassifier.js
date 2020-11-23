@@ -1,3 +1,9 @@
+/**
+ * 
+ * Módulo que calcula a "idade" do ticket
+ * 
+ */
+
 // Quanto mais antigo e próximo da data pivô for o ticket, maior a relevância da data no classificador
 // A data pivô deve ser mais antiga que o ticket mais antigo
 const DateClassifier = (doc) => {

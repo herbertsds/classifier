@@ -1,3 +1,10 @@
+/**
+ * 
+ * Controller responsável por gerenciar as 
+ * sugestões do usuário para classificação de termos
+ * 
+ */
+
 const { classify, crowdsource } = require('../services/classify')
 const { writeJson } = require('../services/manipulateFile')
 const ticketController = require('./ticketController')

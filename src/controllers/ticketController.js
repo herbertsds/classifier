@@ -1,3 +1,9 @@
+/**
+ * 
+ * Controller responsável por gerenciar as requisições referentes aos tickets
+ * 
+ */
+
 const Ticket = require('../models/ticket')
 
 // Retorna todos os dados considerando os filtros, ordenações e paginação

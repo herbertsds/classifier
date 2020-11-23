@@ -1,3 +1,9 @@
+/**
+ * 
+ * Utiliza o dicionário de palavras para adicionar palavras com o mesmo radical que outras à base
+ * 
+ */
+
 const stemmer = require('./stemmer')
 const { readTxt } = require('../../manipulateFile')
 

@@ -1,3 +1,9 @@
+/**
+ * 
+ * Adiciona os tickets classificados à base de dados do MongoDB
+ * 
+ */
+
 const ticketController = require('../../controllers/ticketController')
 const { classify } = require('../../services/classify') 
 const { writeJson } = require('../../services/manipulateFile')

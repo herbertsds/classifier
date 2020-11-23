@@ -1,3 +1,10 @@
+/**
+ * 
+ * Middleware responsável por tratar parâmetros exigidos
+ * Filtragem, ordenação e paginação
+ * 
+ */
+
 const capitalize = require('capitalize')
 
 // Cria o array de parâmetros para ser usado na filtragem e ordenação

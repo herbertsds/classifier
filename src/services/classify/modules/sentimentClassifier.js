@@ -1,3 +1,10 @@
+/**
+ * 
+ * Módulo de análise de sentimentos utilizando a base AFINN melhorada
+ * 
+ */
+
+
 const Sentiment = require('sentiment')
 const { removeAcentos, removeCedilha } = require('ptbr')
 

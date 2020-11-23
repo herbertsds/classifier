@@ -1,3 +1,9 @@
+/**
+ * 
+ * Mapeamento das rotas da API para sugestão de classificação de termos
+ * 
+ */
+
 const express = require('express')
 
 const { saveSuggest } = require('../controllers/suggestController')

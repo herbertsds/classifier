@@ -1,3 +1,9 @@
+/**
+ * 
+ * Gerencia e exporta o serviço de classificação
+ * 
+ */
+
 const DateClassifier = require('./modules/dateClassifier')
 const {SetSentimentLib, SentimentClassifier} = require('./modules/sentimentClassifier')
 const {Priorize, Classify} = require('./modules/synthesize')

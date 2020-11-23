@@ -1,3 +1,9 @@
+/**
+ * 
+ * Gerencia e exporta o serviço de melhoria da base AFINN-165
+ * 
+ */
+
 const matchDictFile = require('./modules/matchDictFile')
 const stemmer = require('./modules/stemmer')
 const getSynonyms = require('./modules/synonyms')

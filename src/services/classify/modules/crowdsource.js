@@ -1,3 +1,9 @@
+/**
+ * 
+ * Módulo que calcula os valores das expressões para classificação baseados nas sugestões
+ * 
+ */
+
 const { removeAcentos, removeCedilha } = require('ptbr')
 const decamelize = require('decamelize');
 
