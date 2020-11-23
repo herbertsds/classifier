@@ -149,7 +149,7 @@ npm run start
 
 | Tipo de Requisição | Endpoint | Descrição | Body |
 |-----|-----|-----|-----|-----|
-|POST|/tickets|Classifica os tickets utilizando o [serviço de classificação](#Classificador) e salva o resultado no banco e no json|**vazio:** Utiliza os tickets padrão. <br> <br> **json:** Utiliza os tickets recebidos via json. |
+| POST | /tickets | Classifica os tickets utilizando o [serviço de classificação](#Classificador) e salva o resultado no banco e no json | **vazio:** Utiliza os tickets padrão. <br> <br> **json:** Utiliza os tickets recebidos via json. |
 
 
 **Parâmetros**
