@@ -15,8 +15,7 @@ const readTxt = (path) => {
 
 }
 
-// Escreve em um arquivo JSON
-const writeJson = (toSave, path) => {
+const writeJson = async (toSave, path) => {
   const data = JSON.stringify(toSave);
 
   fs.writeFile(path, data, (err) => {
@@ -27,7 +26,17 @@ const writeJson = (toSave, path) => {
   });
 }
 
+// Escreve em um arquivo JSON
+const writeJsonSync = async (toSave, path) => {
+  const data = JSON.stringify(toSave);
+
+  fs.writeFileSync(path, data)
+  console.log(`Salvo em: ${path}`);
+    
+}
+
 module.exports = {
   readTxt,
-  writeJson
+  writeJson,
+  writeJsonSync
 }

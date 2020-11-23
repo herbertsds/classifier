@@ -29,8 +29,20 @@ const populate = async (data) => {
 
 }
 
+const deleteMany = async () => {
+    await Ticket.deleteMany({})   
+}
+
+const findTickets = async () => {
+    
+    return await Ticket.find({})
+
+}
+
 module.exports = {
     get,
     count,
-    populate
+    populate,
+    deleteMany,
+    findTickets
 }

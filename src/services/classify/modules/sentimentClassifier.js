@@ -23,7 +23,6 @@ const SetSentimentLib = () => {
                     }
 
                     if (changeValue[prevtoken] || changeValue[thirdToken]) {
-                        console.log(tokens[cursor])
                         tokenScore = -tokenScore
                     }
 
@@ -49,12 +48,17 @@ const SentimentClassifier = (doc) => {
         if(interaction.Sender === "Customer"){
             const analyzed = sentiment.analyze(`${removeAcentos(removeCedilha(interaction.Subject)) } ${removeAcentos(removeCedilha(interaction.Message))}`, {language: 'ptbr'})
             result.push(analyzed)
-            console.log(analyzed)
             score.push(analyzed.score)
+
+            // Adicionando as expressões no documento (para ser possível futuro crowdsourcing)
+            interaction.Positives = analyzed.positive
+            interaction.Negatives = analyzed.negative
         }
 
         // Aproveita o loop para fazer o parse das datas para o formato correto
         interaction.DateCreate = new Date(interaction.DateCreate)
+
+        
     })
 
     // Calcula o ânimo global do cliente. As mensagens mais antigas tem peso menor na classificação
@@ -63,6 +67,8 @@ const SentimentClassifier = (doc) => {
     // Diminui a prioridade de documentos com apenas uma mensagem
     if(result.length === 1)
         averageScore = averageScore < 0 ? averageScore * 1.3 : averageScore / 1.3
+
+    console.log(doc.Interactions[0].Positives)
 
     return {doc, result, averageScore}
 }

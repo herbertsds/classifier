@@ -1,5 +1,6 @@
 const ticketController = require('../../controllers/ticketController')
-const classify = require('../../services/classify') 
+const { classify } = require('../../services/classify') 
+const { writeJson } = require('../../services/manipulateFile')
 
 
 // Verifica se há dados na base e a popula se necessário
@@ -15,8 +16,25 @@ const populate = async (req, res, next) => {
         
         
         try {
+            
+            // Se enviado como parâmetro, apaga toda a base antes de reinserir os dados
+            if('delete_before' in req.query)
+                await ticketController.deleteMany()
+            
             req.body = classify(req.body)
+            
+
             req.insertedCount = await ticketController.populate(req.body)
+
+            
+            
+            // Escreve classificação no JSON
+            // OBS: Apenas arquivos pequenos. Operação de escrita é demorada e idealmente deve ser feita em outro serviço
+            if(await ticketController.count() < 50){
+                req.body = await ticketController.findTickets()
+                writeJson(req.body,'src/data/tickets.json')
+            }
+            
         } catch (error) {
             res.status(500).send(error)
         }

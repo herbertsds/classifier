@@ -35,6 +35,16 @@ const ticketSchema = new mongoose.Schema({
         },
         Sender: {
             type: String
+        },
+        Positives: {
+            type: [
+                String
+            ]
+        },
+        Negatives:{
+            type: [
+                String
+            ]
         }
     }],
     Priority: {

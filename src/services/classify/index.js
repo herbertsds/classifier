@@ -1,6 +1,7 @@
 const DateClassifier = require('./modules/dateClassifier')
 const {SetSentimentLib, SentimentClassifier} = require('./modules/sentimentClassifier')
 const {Priorize, Classify} = require('./modules/synthesize')
+const crowdsource = require('./modules/crowdsource')
 
 
 const classify = (docs) => {
@@ -27,4 +28,7 @@ const classify = (docs) => {
     })
 }
 
-module.exports = classify
+module.exports = {
+    classify,
+    crowdsource
+}
