@@ -21,6 +21,7 @@ A decisão de construir esta ferramenta em Node.js e MongoDB partiu da necessida
     - [npm](#npm)
     - [MongoDB](#MongoDB)
     - [GIT](#GIT)
+    - [Configurando Aplicação](#Configurando&#32;Aplicação)
 - [Utilização](#Utilização)
     - [Iniciando Servidor](#Iniciando&#32;Servidor)
     - [Endpoints](#Endpoints)
