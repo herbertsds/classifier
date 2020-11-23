@@ -68,8 +68,6 @@ const SentimentClassifier = (doc) => {
     if(result.length === 1)
         averageScore = averageScore < 0 ? averageScore * 1.3 : averageScore / 1.3
 
-    console.log(doc.Interactions[0].Positives)
-
     return {doc, result, averageScore}
 }
 

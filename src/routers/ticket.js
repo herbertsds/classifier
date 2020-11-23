@@ -1,4 +1,3 @@
-// TODO: javadocs
 const express = require('express')
 
 const { populate, getParams } = require('../middleware/')
