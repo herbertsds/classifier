@@ -146,8 +146,9 @@ npm run start
 
 [voltar ao topo](#Índice)
 
+
 | Tipo de Requisição | Endpoint | Descrição | Body |
-|---|:---|:---|:---|:---|
+|-----|-----|-----|-----|-----|
 |POST|/tickets|Classifica os tickets utilizando o [serviço de classificação](#Classificador) e salva o resultado no banco e no json|**vazio:** Utiliza os tickets padrão. <br> <br> **json:** Utiliza os tickets recebidos via json. |
 
 
@@ -159,6 +160,9 @@ npm run start
     - *nenhum valor suportado*
 ---
 ---
+---
+
+
 | Tipo de Requisição | Endpoint | Descrição | Body |
 |---|---|---|---|---|
 |GET|/tickets|Lista os tickets classificados. Caso não haja tickets classificados, utiliza os tickets padrão para rodar o [serviço de classificação](#Classificador) e salvar o resultado no banco e no json|*não aceita body* |
@@ -253,6 +257,9 @@ npm run start
 ---
 ---
 ---
+
+
+
 | Tipo de Requisição | Endpoint | Descrição | Body |
 |---|---|---|---|---|
 |POST|/suggest|Sugere novos valores de classificação das palavras. Para mais detalhes sobre sugestões, ver [serviço de crowdsourcing](#Crowdsourcing)|**json:** <br>```{ "palavra": int(valor) }``` <br> Pode ser enviado mais de uma palavra por requisição |
